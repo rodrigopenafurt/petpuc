@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Clínica Municipal Caramelo</title>
+  <link rel="stylesheet" href="Unidades.css">
+  <link rel="icon" href="/midias/icon2.png">
+</head>
+<body>
+  <header>
+    <h1>
+      <a class="logo" href="/paginaHome/home.html" title="Ir para a página inicial">
+        <strong>CuidaPet</strong>
+      </a>
+    </h1>
+    <div class="caixa-pesquisa">
+      <input type="text" class="texto-pesquisa" placeholder="Pesquisar..." aria-label="Campo de pesquisa">
+      <button class="btn-pesquisa" title="Pesquisar">
+        <img class="lupabranca" src="/midias/lupabranca.png" alt="Ícone de lupa" width="40" height="25">
+      </button>
+    </div>
+    <div>
+      <a class="btn-perfil" href="/Login e cadastro/login.html">
+          <img class="icon-perfil" src="/midias/icon.perfil.png"  alt="icon perfil" width="auto" height="auto">
+      </a>
+  </div>
+  </header>
+  
+  <main>
+    <section class="menu">
+      <div class="faixa-amarela">
+        <img class="animaisnomenu" src="/midias/pets.barra.png" alt="Imagem de animais no menu">
+        <nav class="paginas-principais">
+          <div class="menu-item">
+            <a href="/meu pet/meupet.html"><strong>Meu pet</strong></a>
+            <div class="submenu">
+              <a href="#cuidados" class="bold">Cuidados</a>
+              <a href="meupet.html">Cães</a>
+              <a href="#gatos">Gatos</a>
+              <a href="#exoticos">Animais exóticos</a>
+              <a href="#adotei">Adotei, e agora?</a>
+            </div>
+          </div>
+          <a href="/paginaSosPet/SosPetView.html"><strong>SOS Pet</strong></a>
+          <a href="/paginaForum/Forum.html"><strong>Fórum</strong></a>
+          <a href="/paginaAdoção/adocao.html">Adoção<strong></strong></a>
+        </nav>
+      </div>
+    </section>
+
+    <section class="navegacao">
+      <p>Início > SOS Pet > Clínica Municipal Caramelo</p>
+    </section>
+
+    <main class="conteudo">
+      <div class="imagem-principal">
+        <img src="/midias/clinicacaramelo.jpg" alt="Clínica Municipal Caramelo" />
+      </div>
+      <div class="secao-informacoes">
+        <h2>Clínica Municipal Caramelo</h2>
+        <h3>Mogi das Cruzes - SP</h3>
+
+        <div class="bloco-informacoes">
+          <div class="item-informacoes">
+            <h4>📍 Localização</h4>
+            <p>
+              R. Dr. Deodato Wertheimer, 40 - Vila Mogilar, Mogi das Cruzes -
+              SP, 08773-090
+            </p>
+          </div>
+          <div class="item-informacoes">
+            <h4>🕒 Horário de Funcionamento</h4>
+            <p>
+              Horário de Funcionamento: de segunda a sexta-feira das 08:00h às
+              17:00h. Atendimento com retirada de senha às 08:00h.
+            </p>
+          </div>
+          <div class="item-informacoes">
+            <h4>📄 Documentos para Atendimento</h4>
+            <p>
+              Compareça à unidade com o animal e apresente RG, CPF e comprovante
+              de endereço do Município de Mogi da Cruzes
+            </p>
+          </div>
+        </div>
+
+        <!-- Div para exibir o mapa -->
+        <div id="mapa"></div>
+      </div>
+    </main>
+
+    <footer>
+      <p>&copy; 2024 CuidaPet. Todos os direitos reservados.</p>
+    </footer>
+   <!-- Botão flutuante do WhatsApp -->
+    <a
+    href="https://wa.me/551533634755?text=Olá! Gostaria de mais informações sobre a unidade."
+    class="whatsapp-button"
+    target="_blank"
+    rel="noopener noreferrer"
+    >
+    <img
+     src="/midias/whatsapp.png"
+      alt="Entre em contato pelo WhatsApp"
+      class="whatsapp-icon"
+    />
+    </a>
+    <!-- API do Google Maps -->
+    <script
+      defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAFwajWgYBUstCVDWItr9vx_IGPlzxcass&callback=initMap"
+    ></script>
+
+    <!-- Script para iniciar o mapa -->
+    <script>
+      let map; 
+
+      function initMap() {
+        const mapElement = document.getElementById("mapa");
+
+        // Limpa para evitar sobreposição
+        mapElement.innerHTML = "";
+
+        if (!map) {
+          // Verifica se o mapa já foi iniciado
+          const location = {
+            lat: -23.512924380254013,
+            lng: -46.19713865948088,
+          };
+          map = new google.maps.Map(mapElement, {
+            zoom: 15,
+            center: location,
+          });
+
+          new google.maps.Marker({
+            position: location,
+            map: map,
+            title: "Clínica Caramelo",
+          });
+        }
+      }
+    </script>
+  </body>
+</html>
+

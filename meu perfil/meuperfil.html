@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sua Conta</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.css">
+    <link rel="stylesheet" href="meuperfil.css">
+    <link rel="icon" href="/midias/icon.pag.png">
+</head>
+<body>
+    <div class="container">
+        
+        
+        <div class="sidebar">
+            <a href="/paginaHome/home.html">
+                <div class="menu-icon" role="button" aria-label="Menu">&#9776;</div>
+            </a>
+        </div>
+        
+        <div class="content">
+            <h2>Sua conta</h2>
+
+            
+            <div class="profile-section">
+                <div class="profile-photo-large" id="profile-photo"></div>
+                <input type="file" id="upload-photo" accept="image/*" style="display:none;" onchange="openCropModal(event)">
+                <button class="upload-button" onclick="document.getElementById('upload-photo').click();">Editar</button>
+            </div>
+
+            
+            <div class="section">
+                <label for="name">Nome</label>
+                <input type="text" id="name" value="Nome do Usuário" disabled>
+                <button onclick="openModal('name')">Editar</button>
+            </div>
+
+            <div class="section">
+                <label for="email">Endereço de e-mail</label>
+                <input type="email" id="email" value="usuario@email.com" disabled>
+                <button onclick="openModal('email')">Editar</button>
+            </div>
+
+            <div class="section">
+                <label for="password">Senha</label>
+                <input type="password" id="password" value="********" disabled>
+                <button onclick="openModal('password')">Editar</button>
+            </div>
+
+            <div class="section">
+                <label for="birthdate">Data de nascimento</label>
+                <input type="date" id="birthdate" value="2000-01-01" disabled>
+                <button onclick="openModal('birthdate')">Editar</button>
+            </div>
+
+            <div class="section">
+                <label for="phone">Número de telefone</label>
+                <input type="tel" id="phone" value="(00) 00000-0000" disabled>
+                <button onclick="openModal('phone')">Editar</button>
+            </div>
+
+            <div class="useranimaisSection">
+                <h2>Animais Registrados</h2>
+                <div id="animaisRegistradosContainer"></div> <!-- Exibe os animais do usuário -->
+            </div>
+            
+            <section id="userForumsSection">
+                <h2>Fóruns Registrados</h2>
+                <ul id="userForumsList"></ul> <!-- Exibe os fóruns do usuário -->
+            </section>
+            
+            
+        </div>
+    </div>
+
+    
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" onclick="closeModal()" role="button" aria-label="Fechar">&times;</span>
+            <h2 id="modalTitle">Editar Informação</h2>
+            <label id="modalLabel"></label>
+            <input type="text" id="modalInput">
+            <button onclick="saveChanges()">Salvar</button>
+        </div>
+    </div>
+
+    
+    <div id="cropModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" onclick="closeCropModal()" role="button" aria-label="Fechar">&times;</span>
+            <h2 id="cropTitle">Editar Foto</h2>
+            <div class="img-container">
+                <img id="crop-image" alt="">
+            </div>
+            <button onclick="cropAndSave()">Salvar</button>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.js"></script>
+    <script src="meuperfil.js"></script>
+</body>
+</html>

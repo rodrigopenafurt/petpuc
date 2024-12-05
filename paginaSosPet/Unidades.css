@@ -1,0 +1,336 @@
+@font-face {
+  font-family: 'Sifonn';
+  src: url('Midias/SiffonPro.otf') format('opentype');
+}
+
+/* Estilo do título */
+h1 {
+  display: flex;
+  font-family: 'Sifonn';
+  margin: 0;
+  color: #5b4686;
+  font-size: 60px;
+  letter-spacing: -3px;
+}
+
+.logo{
+  text-decoration: none; 
+  color: #5b4686;
+}
+
+.logo:hover{
+  color: #2e185a;
+  transition: 0.5s;
+}
+
+/* Corpo da página */
+body {
+  font-family: Arial;
+  margin: 0; 
+  padding: 0; 
+  background-color: #fff5ec; 
+  color: #5b4686; 
+}
+
+/* Cabeçalho */
+header {
+  background-color: #fff5ec;
+  padding: 10px 34px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.caixa-pesquisa,
+.btn-perfil {
+  margin-left: auto; 
+}
+
+/* Estilo das imagens no cabeçalho */
+header img {
+  height: 40px; 
+  margin-left: 10px;
+  margin-right: 10px;
+
+}
+.caixa-pesquisa {
+  background: #5b4686;
+  border-radius: 40px;
+  display: flex;
+  align-items: center;
+  height: 40px;
+  width: 200px;
+  transition: width 0.4s;
+}
+
+.caixa-pesquisa:hover,
+.caixa-pesquisa:focus-within {
+  width: 320px; /* Expansão ao interagir */
+}
+
+.texto-pesquisa {
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  color: #fff;
+  font-weight: bold;
+  padding: 5px 10px;
+  width: 0;
+  opacity: 0;
+  transition: width 0.4s, opacity 0.3s;
+}
+
+.caixa-pesquisa:hover .texto-pesquisa,
+.caixa-pesquisa:focus-within .texto-pesquisa {
+  width: 100%;
+  opacity: 1;
+}
+
+.texto-pesquisa::placeholder {
+  color: #ccc;
+}
+
+.btn-pesquisa {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.lupabranca {
+  width: 20px;
+  height: 20px;
+}
+
+
+.icon-perfil a {
+  right: 48px;
+  width: 20px;
+  padding: auto;
+  margin: 5px;
+}
+
+.faixa-amarela{
+  background-color: #ffc95d;
+  padding: 0px 28px 0px 28px;
+  display: flex;
+  text-align: center;
+  color: #4C2F87;
+  font-weight: bold;
+  justify-content: space-between;
+}
+
+.animaisnomenu {
+  padding-top: auto;
+  display: flex;
+  width: 250px; 
+  height: 100%;
+  flex-wrap: wrap;
+  object-fit: cover;
+}
+
+/* Navegação */
+nav {
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  align-content: stretch;
+  justify-content: flex-end;
+  flex-direction: row;
+  border-radius: 10px;
+  transition: text-shadow 0.3s ease;
+}
+
+/* Estilo dos links de navegação */
+nav a {
+  margin: 0 20px; 
+  text-decoration: none; 
+  color: #4C2F87; 
+  font-weight: bold; 
+  font-size: 18px;
+  display: inline-block;
+  position: relative;
+  transition: color 0.3s ease; /* Transição da cor */
+}
+
+/* Efeito ao passar o mouse sobre os links */
+nav a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background-color: #4C2F87;
+  bottom: -3px;
+  left: 0;
+  transition: width 0.3s ease; 
+}
+
+nav a:hover::after {
+  width: 100%; 
+}
+
+.menu {
+  
+  align-items: center;
+  background-color: #FFCC66;
+}
+
+.menu-item {
+  position: relative;
+  cursor: pointer;
+  color: #4A2778;
+  font-weight: bold;
+  font-size: 18px;
+  align-items: flex-end;
+  margin: 0 20px; 
+
+}
+
+/* Exibir o submenu ao passar o mouse sobre "Meu pet" */
+.menu-item:hover .submenu {
+  display: block;
+}
+
+/* Estilos para o submenu */
+.submenu {
+  display: none;
+  position: absolute;
+  top: 105%;
+  left: -45px;
+  background-color: #FFF3E6;
+  padding: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  min-width: 150px;
+  z-index: 1000;
+}
+
+.submenu a {
+  display: block;
+  padding: 8px 12px;
+  color: #4A2778;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+
+@media (max-width: 768px) {  /*layout responsivo mobile*/
+  .faixa-amarela {
+      flex-direction: column;
+      align-items: center;
+      padding: 10px;
+  }
+  
+  nav {
+      flex-direction: column;
+      align-items:center;
+  }
+  
+  nav a {
+      margin: 10px 0; /* Espaçamento entre os titulos empilhados */
+  }
+}
+
+  .imagem-principal img {
+    width: 100%;
+    height: 965px;
+    object-fit: cover; 
+    display: block; 
+  }
+  
+  .conteudo {
+    display: flex;
+    flex-wrap: nowrap; 
+    justify-content: space-between; 
+    align-items: flex-start; /* Alinha ao topo */
+    gap: 20px; /* Espaçamento entre o mapa e as informações */
+  }
+  
+  .secao-informacoes {
+    flex: 1; /* Ocupa o mesmo espaço que o mapa */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  
+  .secao-informacoes h2 {
+    color: #4c2f87;
+    font-size: 28px;
+    letter-spacing: -1px;
+  }
+  
+  .bloco-informacoes {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 50%; /* Usa 50% do espaço para telas grandes */
+  }
+  
+  .item-informacoes {
+    background-color: #ffc95d;
+    color: #5b4686;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 15px; 
+  }
+  
+  .item-informacoes h4 {
+    margin: 0;
+    font-size: 18px;
+  }
+  
+  .item-informacoes p {
+    white-space: pre-line;
+  }
+  
+  /* Estilo mapa */
+  #mapa {
+    width: 770px;
+    height: 370px;
+    margin: 20px 0;
+    border: 1px solid #ddd;
+  }
+   /* Estilo botao whatsapp*/
+  .whatsapp-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    width: 60px;
+    height: 60px;
+    background-color:  #4c2f87;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .whatsapp-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+  }
+  
+  .whatsapp-icon {
+    width: 35px;
+    height: 35px;
+  }
+  
+  footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    background-color: #ffc95d;
+    padding: 5px 5px;
+    text-align: center;
+    color: #4c2f87;
+    font-weight: bold;
+    font-size: 14px;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+  }
+  

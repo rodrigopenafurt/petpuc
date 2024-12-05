@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rede de Adoção</title>
+    <link rel="stylesheet" href="adocao.css">
+</head>
+
+<body>
+    <!-- Cabeçalho -->
+    <header>
+        <h1><a class="logo" href="/paginaHome/home.html"><strong>CuidaPet</strong></a></h1>
+        <div class="caixa-pesquisa">
+            <input type="text" class="texto-pesquisa" placeholder="Pesquisar...">
+            <a class="btn-pesquisa">
+                <img class="lupabranca" src="/midias/lupabranca.png" alt="lupa fundo branco" width="40px" height="25px">
+            </a>
+        </div>
+        <div>
+            <a class="btn-perfil" href="/Login e cadastro/login.html">
+                <img class="icon-perfil" src="/midias/icon.perfil.png"  alt="icon perfil" width="auto" height="auto">
+            </a>
+        </div>
+    </header>
+
+    <!-- Menu de Navegação -->
+    <section class="menu">
+        <div class="faixa-amarela">
+            <img class="animaisnomenu" src="/midias/pets.barra.png" alt="animais no menu">
+            <nav class="paginas-principais">
+                <div class="menu-item">
+                    <a href="#"><strong>Meu pet</strong></a>
+                    <div class="submenu">
+                        <a href="#cuidados" class="bold">Cuidados</a>
+                        <a href="meupet.html">Cães</a>
+                        <a href="#gatos">Gatos</a>
+                        <a href="#exoticos">Animais exóticos</a>
+                        <a href="#adotei">Adotei, e agora?</a>
+                    </div>
+                </div>
+                <a href="/paginaSosPet/SosPetView.html"><strong>SOS Pet</strong></a>
+                <a href="/paginaForum/Forum.html"><strong>Fórum</strong></a>
+                <a href="/paginaAdoção/adocao.html">Adoção<strong></strong></a>
+            </nav>
+        </div>
+    </section>
+
+    <section class="navegacao">
+        <p>Início > Adoção</p>
+      </section>
+
+    <!-- Botão de Cadastro -->
+    <button id="btnCadastrar" onclick="abrirModal()">Cadastrar Animal</button>
+
+    <!-- Modal de Cadastro -->
+    <div id="modalCadastro" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="fecharModal()">&times;</span>
+            <h2>Cadastrar Animal</h2>
+            <form id="formCadastro" onsubmit="cadastrarAnimal(event)">
+                <label for="tipo">Tipo:</label>
+                <select id="tipo" name="tipo" required>
+                    <option value="Cães">Cães</option>
+                    <option value="Gatos">Gatos</option>
+                    <option value="Pets não convencionais">Pets não convencionais</option>
+                </select>
+
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" required>
+
+                <label for="sexo">Sexo:</label>
+                <select id="sexo" name="sexo" required>
+                    <option value="Macho">Macho</option>
+                    <option value="Fêmea">Fêmea</option>
+                </select>
+
+                <label for="idade">Idade:</label>
+                <input type="text" id="idade" name="idade" required>
+
+                <label for="porte">Porte:</label>
+                <input type="text" id="porte" name="porte" required>
+
+                <label for="foto">Foto:</label>
+                <input type="file" id="foto" name="foto" accept="image/*" required>
+
+                <label for="nomeProtetor">Nome do Protetor:</label>
+                <input type="text" id="nomeProtetor" name="nomeProtetor" required>
+
+                <label for="telefoneContato">Telefone de Contato:</label>
+                <input type="tel" id="telefoneContato" name="telefoneContato" required>
+
+                <button type="submit">Cadastrar</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal de Contato -->
+    <div id="modalContato" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="fecharModalContato()">&times;</span>
+            <h3>Para adotar esse pet ou saber mais sobre ele, entre em contato com o protetor:</h3>
+            <p id="detalhesContato"></p>
+        </div>
+    </div>
+
+    <!-- Modal de Foto -->
+    <div id="modalFoto" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="fecharModalFoto()">&times;</span>
+            <img id="imagemModal" src="" alt="Foto do Animal">
+        </div>
+    </div>
+
+    <!-- Lista de Animais -->
+    <h2 class="titulo-animais">Animais disponíveis para adoção</h2>
+    <section id="listaAnimais"></section>
+    <input type="hidden" id="animalEditando" value="">
+
+
+    <!-- Script JavaScript -->
+    <script src="adocaov2.js"></script>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>&copy; 2024 CuidaPet. Todos os direitos reservados.</p>
+    </footer>
+</body>
+
+</html>

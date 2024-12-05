@@ -1,0 +1,443 @@
+@font-face {
+    font-family: 'Sifonn';
+    src: url('/midias/SiffonPro.otf') format('opentype');
+}
+
+/* Estilo do título */
+h1 {
+    display: flex;
+    font-family: 'Sifonn';
+    margin: 0;
+    color: #5b4686;
+    font-size: 40px;
+    letter-spacing: -3px;
+}
+
+.logo{
+    text-decoration: none; 
+    color: #5b4686;
+}
+
+.logo:hover{
+    color: #2e185a;
+    transition: 0.5s;
+}
+.icon-perfil {
+    border-radius: 50%; /* Torna a imagem redonda */
+    width: 40px; /* Define a largura da imagem */
+    height: 40px; /* Define a altura da imagem */
+    object-fit: cover; /* Garante que a imagem mantenha suas proporções */
+}
+/* Corpo da página */
+body {
+    font-family: Arial;
+    margin: 0; 
+    padding: 0; 
+    background-color: #fff5ec; 
+    color: #5b4686; 
+}
+
+main {
+    flex: 1; /* Expande para ocupar o espaço disponível */
+}
+
+/* Cabeçalho */
+header {
+    background-color: #fff5ec;
+    padding: 10px 34px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.caixa-pesquisa,
+.btn-perfil {
+    margin-left: auto; 
+}
+
+/* Estilo das imagens no cabeçalho */
+header img {
+    height: 40px; 
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.lupabranca{
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    right: 48px;
+    transform: translateY(-50%); 
+    z-index: 1; 
+}
+
+/* Estilos da caixa de pesquisa */
+.caixa-pesquisa {
+    background: #5b4686;
+    height: 2px;
+    width: 2px;
+    padding: 20px;
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: width 0.4s; 
+}
+
+/* Estilos do campo de texto */
+.texto-pesquisa {
+    display: flex;
+    background: #ffffff1f;
+    border-radius: 40px;
+    padding: 5px 5px 5px 5px;
+    margin-right: 20px;
+    border: none; 
+    outline: 0; 
+    font-size: 10px;
+    color: #5b4686;
+    font-weight: bold;
+    opacity: 0;
+    width: 380px;
+}
+
+/* Estilos do placeholder */
+.texto-pesquisa::placeholder {
+    color: #ccc;
+    opacity: 1;
+}
+
+/* Expansão da caixa de pesquisa */
+.caixa-pesquisa:hover,
+.caixa-pesquisa:focus-within { 
+    width: 420px; 
+}
+
+/* Estilos para mostrar o campo de texto */
+.caixa-pesquisa:hover .texto-pesquisa, 
+.caixa-pesquisa:focus-within .texto-pesquisa {
+    opacity: 1;
+}
+
+/* Estilos do botão dentro da caixa de pesquisa */
+.caixa-pesquisa-btn {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* Estilos do link dentro da caixa de pesquisa */
+.caixa-pesquisa a {
+    position: absolute;
+    align-items: baseline;
+    right: 48px;
+    width: 20px;
+}
+
+.icon-perfil a {
+    right: 48px;
+    width: 20px;
+    padding: auto;
+    margin: 5px;
+}
+
+.faixa-amarela{
+    background-color: #ffc95d;
+    padding: 0px 28px 0px 28px;
+    display: flex;
+    text-align: center;
+    color: #4C2F87;
+    font-weight: bold;
+    justify-content: space-between;
+}
+
+.animaisnomenu {
+    padding-top: auto;
+    display: flex;
+    width: 250px; 
+    height: 100%;
+    flex-wrap: wrap;
+    object-fit: cover;
+}
+
+/* Navegação */
+nav {
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    align-content: stretch;
+    justify-content: flex-end;
+    flex-direction: row;
+    border-radius: 10px;
+    transition: text-shadow 0.3s ease;
+}
+
+/* Estilo dos links de navegação */
+nav a {
+    margin: 0 20px; 
+    text-decoration: none; 
+    color: #4C2F87; 
+    font-weight: bold; 
+    font-size: 18px;
+    display: inline-block;
+    position: relative;
+    transition: color 0.3s ease; 
+}
+
+/* Efeito ao passar o mouse sobre os links */
+nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: #4C2F87;
+    bottom: -3px;
+    left: 0;
+    transition: width 0.3s ease; 
+}
+
+nav a:hover::after {
+    width: 100%; 
+}
+
+.menu {
+    
+    align-items: center;
+    background-color: #FFCC66;
+}
+
+.menu-item {
+    position: relative;
+    cursor: pointer;
+    color: #4A2778;
+    font-weight: bold;
+    font-size: 18px;
+    align-items: flex-end;
+    margin: 0 20px; 
+}
+
+/* Exibir o submenu ao passar o mouse sobre "Meu pet" */
+.menu-item:hover .submenu {
+    display: block;
+}
+
+/* Estilos para o submenu */
+.submenu {
+    display: none;
+    position: absolute;
+    top: 105%;
+    left: -45px;
+    background-color: #FFF3E6;
+    padding: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    min-width: 150px;
+    z-index: 1000;
+}
+
+.submenu a {
+    display: block;
+    padding: 8px 12px;
+    color: #4A2778;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+@media (max-width: 768px) {  /*layout responsivo mobile*/
+    .faixa-amarela {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+    }
+    
+    nav {
+        flex-direction: column;
+        align-items:center;
+    }
+    
+    nav a {
+        margin: 10px 0; /* Espaçamento entre os titulos empilhados */
+    }
+}
+
+/* Rodapé */
+footer {
+    display: flex;
+    background-color: #ffc95d;
+    padding: 5px;
+    text-align: center;
+    justify-content: center;
+    color: #4C2F87;
+    font-weight: bold;
+    font-size: 12px;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+/* Estilos para o botão de cadastro */
+#btnCadastrar {
+    background-color: #5b4686;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    
+}
+
+/* Estilos para a janela modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 20px;
+    width: 60%;
+    border-radius: 5px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: black;
+}
+
+/* Estilos para a lista de animais */
+#listaAnimais {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 20px;
+    padding: 15px;
+}
+
+.animal-item {
+    background-color: #ffc95d;
+    padding: 20px;
+    border-radius: 8px;
+    width: 185px;
+    text-align: center;
+}
+
+button {
+    background-color: #5b4686;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #4a2778;
+}
+
+#listaAnimais {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 20px;
+    margin-bottom: 40px; /* Adiciona espaço entre a lista e o rodapé */
+}
+
+.titulo-animais {
+    text-align: center;
+    font-size: 24px;
+    color: #5b4686;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.modal-content form label,
+.modal-content form input {
+    display: block;
+    width: 30%;
+    margin-bottom: 3px;
+}
+
+button.contato {
+    background-color: #5b4686; 
+    font-weight: bold;
+    border: 2px solid #5b4686;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    width: 90%;
+}
+
+button.contato:hover {
+    background-color: #e65a50;
+    transform: scale(1.1); /* Aumenta o tamanho ao passar o mouse */
+}
+
+#modalContato .modal-content {
+    width: 40%;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    background-color: #ffc95d;
+    color: #5b4686;
+}
+
+#modalContato p {
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+#btnCadastrar {
+    background-color: #5b4686;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    position: absolute;
+    right: 20px;
+    margin-top: 10px;
+}
+
+button.editar, button.excluir {
+    font-size: 12px;
+    padding: 3px 6px;
+    margin-top: 5px;
+}
+
+/* Estilo responsivo para a imagem do modal */
+#modalFoto img {
+    max-width: 90%; /* A imagem ocupará até 90% da largura da tela */
+    max-height: 80vh; /* A imagem ocupará até 80% da altura da tela */
+    width: auto; /* Mantém a proporção da largura */
+    height: auto; /* Mantém a proporção da altura */
+    display: block; /* Centraliza a imagem no modal */
+    margin: 0 auto; /* Centraliza horizontalmente */
+    border-radius: 10px; /* Bordas arredondadas para um visual mais elegante */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para destacar a imagem */
+}
+
+/* Regras para telas pequenas */
+@media (max-width: 768px) {
+    #modalFoto img {
+        max-width: 100%; /* A imagem ocupa 100% da largura no mobile */
+        max-height: 70vh; /* Ajuste da altura no mobile */
+    }
+}

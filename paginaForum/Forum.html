@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/paginaForum/Forum.css">
+    <link rel="icon" href="/midias/icon2.png">
+    <title>Fórum - CuidaPet</title>
+    <script defer src="/paginaForum/forum.js"></script>
+</head>
+<body>
+    <header>        
+        <h1><a class="logo" href="/paginaHome/home.html"><strong>CuidaPet</strong></a></h1>
+            <div class="caixa-pesquisa">
+                <input type="text" class="texto-pesquisa" placeholder="Pesquisar...">
+                <a class="btn-pesquisa">
+                    <img class="lupabranca" src="/midias/lupabranca.png" alt="lupa fundo branco" width="40px" height="25px">
+                </a>
+            </div>
+            <div>
+                <a class="btn-perfil" href="/Login e cadastro/login.html">
+                    <img class="icon-perfil" src="/midias/icon.perfil.png"  alt="icon perfil" width="auto" height="auto">
+                </a>
+            </div>
+    </header>
+    <main>
+        <section class="menu">
+            <div class="faixa-amarela">
+                <img class="animaisnomenu" src="/midias/pets.barra.png" alt="animaisnomenu">
+                <nav class="paginas-principais">
+                    <div class="menu-item">
+                        <a href="/Meu Pet/meupet.html"><strong>Meu pet</strong></a>
+                            <div class="submenu">
+                                <a href="#cuidados" class="bold">Cuidados</a>
+                                <a href="meupet.html">Cães</a>
+                                <a href="#gatos">Gatos</a>
+                                <a href="#exoticos">Animais exóticos</a>
+                                <a href="#adotei">Adotei, e agora?</a>
+                            </div>
+                    </div>
+                    <a href="/paginaSosPet/SosPetView.html"><strong>SOS Pet</strong></a>
+                    <a href="/paginaForum/Forum.html"><strong>Fórum</strong></a>
+                    <a href="/paginaAdoção/adocao.html">Adoção<strong></strong></a>
+                </nav>
+            </div>
+        </section>
+        <div class="ImgIntro">
+            <img src="/midias/CapaForum.png" alt="capa text forum">
+        </div>
+        <section class="CriarForum">
+            <h2>Publicar um novo fórum</h2>
+            <div class="botão">
+                <a id="createForumButton">Começar</a>
+            </div>
+        </section>
+
+        <!-- Modal para criação do fórum -->
+        <div class="modal" id="forumModal">
+            <div class="modal-content">
+                <span class="close-btn" id="closeModal">&times;</span>
+                <h2>Definir uma capa</h2>
+                <input type="file" id="forumImage" accept="image/*" class="input-campo" required>
+
+                <h2>Título do Fórum</h2>
+                <input type="text" id="forumTitle" class="input-campo" placeholder="Insira o título do fórum" required>
+
+                <h2>Conteúdo</h2>
+                <textarea id="forumContent" class="textarea-campo" placeholder="Escreva sua publicação"></textarea>
+
+                <button id="saveForumButton">Publicar</button>
+            </div>
+        </div>
+
+        <!-- Filtros -->
+        <div class="sort-container">
+            <h2>Fóruns Publicados</h2>
+            <div>
+                <label class="filtro" for="sortOrder">Ordenar por:</label>
+                <select class="filtro" id="sortOrder">
+                    <option value="recent">Mais Recentes</option>
+                    <option value="oldest">Mais Antigos</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Lista de Fóruns -->
+        <section id="forumListSection">
+            <div id="forumList"></div>
+        </section>
+
+        <!-- Modal de Comentário -->
+        <div class="modal" id="commentModal">
+            <div class="modal-content">
+                <span class="close-btn" id="closeCommentModal">&times;</span>
+                <textarea id="commentText" placeholder="Escreva seu comentário"></textarea>
+                <button id="saveCommentButton">Comentar</button>
+            </div>
+        </div>
+
+        <!-- Modal de Edição -->
+        <div class="modal" id="editModal">
+            <div class="modal-content">
+                <span class="close-btn" id="closeEditModal">&times;</span>
+                <h2>Editar Fórum</h2>
+                <input type="text" id="editTitle" placeholder="Novo título">
+                <textarea id="editContent" placeholder="Novo conteúdo"></textarea>
+                <button id="saveEditButton">Salvar Alterações</button>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 CuidaPet. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>

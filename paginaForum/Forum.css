@@ -1,0 +1,647 @@
+@font-face {
+    font-family: 'Sifonn';
+    src: url('/midias/SiffonPro.otf') format('opentype');
+}
+
+/* Estilo do título */
+h1 {
+    display: flex;
+    font-family: 'Sifonn';
+    margin: 0;
+    color: #5b4686;
+    font-size: 40px;
+    letter-spacing: -3px;
+}
+
+.logo{
+    text-decoration: none; 
+    color: #5b4686;
+}
+
+.logo:hover{
+    color: #2e185a;
+    transition: 0.5s;
+}
+.icon-perfil {
+    border-radius: 50%; /* Torna a imagem redonda */
+    width: 40px; /* Define a largura da imagem */
+    height: 40px; /* Define a altura da imagem */
+    object-fit: cover; /* Garante que a imagem mantenha suas proporções */
+}
+
+/* Corpo da página */
+body {
+    font-family: Arial;
+    margin: 0; 
+    padding: 0; 
+    background-color: #fff5ec; 
+    color: #5b4686; 
+}
+
+main {
+    flex: 1; /* Expande para ocupar o espaço disponível */
+}
+
+/* Cabeçalho */
+header {
+    background-color: #fff5ec;
+    padding: 10px 34px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Altera para criar espaço entre o título e as divs */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.caixa-pesquisa,
+.btn-perfil {
+    margin-left: auto; 
+}
+
+/* Estilo das imagens no cabeçalho */
+header img {
+    height: 40px; 
+    margin-left: 10px; 
+    margin-right: 10px; 
+}
+
+.lupabranca{
+    width: 20px;
+    height: 20px;
+    position: absolute; 
+    right: 48px;
+    transform: translateY(-50%); 
+    z-index: 1; 
+}
+
+/* Estilos da caixa de pesquisa */
+.caixa-pesquisa {
+    background: #5b4686;
+    height: 2px;
+    width: 2px;
+    padding: 20px;
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: width 0.4s; /* Transição suave na largura */
+}
+
+/* Estilos do campo de texto */
+.texto-pesquisa {
+    display: flex;
+    background: #ffffff1f;
+    border-radius: 40px;
+    padding: 5px 5px 5px 5px;
+    margin-right: 20px;
+    border: none; 
+    outline: 0; 
+    font-size: 10px;
+    color: #5b4686;
+    font-weight: bold;
+    opacity: 0;
+    width: 380px;
+}
+
+/* Estilos do placeholder */
+.texto-pesquisa::placeholder {
+    color: #ccc;
+    opacity: 1;
+}
+
+/* Expansão da caixa de pesquisa */
+.caixa-pesquisa:hover,
+.caixa-pesquisa:focus-within { 
+    width: 420px; 
+}
+
+/* Estilos para mostrar o campo de texto */
+.caixa-pesquisa:hover .texto-pesquisa, 
+.caixa-pesquisa:focus-within .texto-pesquisa {
+    opacity: 1; 
+}
+
+/* Estilos do botão dentro da caixa de pesquisa */
+.caixa-pesquisa-btn {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* Estilos do link dentro da caixa de pesquisa */
+.caixa-pesquisa a {
+    position: absolute;
+    align-items: baseline;
+    right: 48px;
+    width: 20px;
+}
+
+.icon-perfil a {
+    right: 48px;
+    width: 20px;
+    padding: auto;
+    margin: 5px;
+}
+
+.faixa-amarela{
+    background-color: #ffc95d;
+    padding: 0px 28px 0px 28px;
+    display: flex;
+    text-align: center;
+    color: #4C2F87;
+    font-weight: bold;
+    justify-content: space-between;
+}
+
+.animaisnomenu {
+    padding-top: 80;
+    display: flex;
+    width: 250px; 
+    height: 100%;
+    flex-wrap: wrap;
+    object-fit: cover;
+}
+
+/* Navegação */
+nav {
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    align-content: stretch;
+    justify-content: flex-end;
+    flex-direction: row;
+    border-radius: 10px;
+    transition: text-shadow 0.3s ease;
+}
+
+/* Estilo dos links de navegação */
+nav a {
+    margin: 0 20px; 
+    text-decoration: none; 
+    color: #4C2F87; 
+    font-weight: bold; 
+    font-size: 18px;
+    display: inline-block;
+    position: relative;
+    transition: color 0.3s ease; 
+}
+
+/* Efeito ao passar o mouse sobre os links */
+nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: #4C2F87;
+    bottom: -3px;
+    left: 0;
+    transition: width 0.3s ease; 
+}
+
+nav a:hover::after {
+    width: 100%; 
+}
+
+.menu {
+    
+    align-items: center;
+    background-color: #FFCC66;
+}
+
+.menu-item {
+    position: relative;
+    cursor: pointer;
+    color: #4A2778;
+    font-weight: bold;
+    font-size: 18px;
+    align-items: flex-end;
+    margin: 0 20px; 
+}
+
+/* Exibir o submenu ao passar o mouse sobre "Meu pet" */
+.menu-item:hover .submenu {
+    display: block;
+}
+
+/* Estilos para o submenu */
+.submenu {
+    display: none;
+    position: absolute;
+    top: 105%;
+    left: -45px;
+    background-color: #FFF3E6;
+    padding: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    min-width: 150px;
+    z-index: 1000;
+}
+
+.submenu a {
+    display: block;
+    padding: 8px 12px;
+    color: #4A2778;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+@media (max-width: 768px) {  /*layout responsivo mobile*/
+    .faixa-amarela {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+    }
+    
+    nav {
+        flex-direction: column;
+        align-items:center;
+    }
+    
+    nav a {
+        margin: 10px 0; /* Espaçamento entre os titulos empilhados */
+    }
+}
+
+/* Rodapé */
+footer {
+    display: flex;
+    background-color: #ffc95d;
+    padding: 5px;
+    text-align: center;
+    justify-content: center;
+    color: #4C2F87;
+    font-weight: bold;
+    font-size: 12px;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/*Conteudo da pagina*/
+
+.CriarForum h2{
+    padding: 25px 0px;
+    display: flex;
+    font-family: 'Arial';
+    margin: 0;
+    color: #5b4686;
+    font-size: 22px;
+}
+
+h2{
+    padding: 25px;
+    display: flex;
+    font-family: 'Arial';
+    margin: 0;
+    color: #5b4686;
+    font-size: 22px;
+}
+
+.CriarForum{
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 10px 34px;
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 30px;
+    flex-wrap: wrap;
+}
+
+
+/*Capa img*/
+.ImgIntro img{
+    width: 100%;
+    height: 100%;
+}
+
+/* Botão intro*/
+.botão{
+    padding: 10px 8px; 
+    width: 200px;
+    color: #fff;
+    background: #5b4686;
+    border: 1px solid #555;
+    border-radius: 8px;
+    text-align: center;
+    user-select: none;
+    cursor: pointer;
+}
+
+.botão a{
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold; 
+}
+
+.botão:hover{
+    background: #4d3974;
+}
+
+.sort-container{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+}
+
+
+/* Contêiner principal */
+.filtro {
+    font-family: Arial, sans-serif;
+    color: #333;
+    font-size: 14px;
+    margin-right: 10px;
+}
+
+/* Estilo do Select */
+.filtro#sortOrder {
+    width: 200px; /* Largura ajustável */
+    height: 30px;
+    padding: 5px 10px;
+    font-size: 14px;
+    color: #333;
+    border: 1px solid #ccc;
+    border-radius: 40px;
+    background-color: #f9f9f9;
+    appearance: none; /* Remove o estilo padrão do navegador */
+    -webkit-appearance: none; /* Safari/Chrome */
+    -moz-appearance: none; /* Firefox */
+    cursor: pointer;
+    background-image: url('https://cdn-icons-png.flaticon.com/512/32/32195.png'); /* Ícone de seta */
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 10px 10px;
+}
+
+/* Estilo ao focar */
+.filtro#sortOrder:focus {
+    border-color: #4CAF50; /* Cor ao focar */
+    outline: none;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+}
+
+/* Estilo das opções (alguns navegadores podem não aplicar totalmente) */
+.filtro#sortOrder option {
+    padding: 10px;
+    background-color: white;
+    color: #333;
+}
+
+/* Hover nas opções (compatível apenas com alguns navegadores) */
+.filtro#sortOrder option:hover {
+    background-color: #4CAF50;
+    color: white;
+}
+
+option {
+    padding: 10px;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* Estilo ao selecionar */
+option:hover {
+    background-color: #4CAF50;
+    color: white;
+}
+
+/* Estilização da área de conteúdo/postagem */
+
+    .forum{
+        display: flex;
+    }
+
+    .conteudo-forum{
+        margin: 10px;
+    }
+
+    .forum-content{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .forum-item {
+        display: flex;
+        padding: 20px;
+        margin: 25px;
+        min-height: 200px;
+        background-color: #ffffff;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        overflow-y: auto;
+        margin-bottom: 20px;
+        flex-direction: column;
+    }
+
+    .forum-image{
+        border-radius: 8px;
+        width: 400px;
+        background-color: #c8c4cf;
+        margin: 10px 0px 10px 0px;
+    }
+
+    section .comments{
+        padding: 10px 10px 10px 0px;
+        border-radius: 8px;
+    }
+
+    section .comments p{
+        background-color: #e8e6ec;
+        padding: 5px 5px 5px 15px;
+        border-radius: 40px;
+        color: #2e185a;
+        box-shadow: 0 0 2px #c2c1c1;
+    }
+
+    .comment-section button{
+        width: 200px; /* Largura ajustável */
+        height: 30px;
+        padding: 5px 10px;
+        font-size: 14px;
+        color: #333;
+        border: 1px solid #ccc;
+        border-radius: 40px;
+        background-color: #f9f9f9;
+        appearance: none; /* Remove o estilo padrão do navegador */
+        -webkit-appearance: none; /* Safari/Chrome */
+        -moz-appearance: none; /* Firefox */
+        cursor: pointer;
+        background-repeat: no-repeat;
+        background-position: right 10px center;
+        background-size: 10px 10px;
+    }
+
+
+/* Estilos do modal */
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.6);
+        justify-content: center;
+        align-items: center;
+    }
+
+    .modal-content {
+        display: flex;
+        align-items: center;
+        padding: 20px;
+        border-radius: 8px;
+        max-width: 600px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.9);
+        position: relative;
+        background-color: #fff;
+        margin: 10% auto;
+        flex-direction: column;
+        align-items: baseline;
+    }
+
+    .modal-content h2{
+        padding: 0px;
+        font-size: 20px;
+        margin-bottom: 20px;
+        margin-top: 10px;
+    }
+
+    .modal-content .input-campo{
+        padding: 5px;
+        margin: 0px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+    }
+
+    .modal-content span, textarea, button{
+        margin: 5px;
+    }
+
+    textarea{
+        font-family: Arial;
+        font-size: 18px;
+        color: #2e185a;
+        padding: 10px;
+    }
+
+    .modal-content button{
+        width: 200px; /* Largura ajustável */
+        height: 30px;
+        padding: 5px 10px;
+        font-size: 14px;
+        color: #333;
+        border: 1px solid #ccc;
+        border-radius: 40px;
+        background-color: #f9f9f9;
+        appearance: none; /* Remove o estilo padrão do navegador */
+        -webkit-appearance: none; /* Safari/Chrome */
+        -moz-appearance: none; /* Firefox */
+        cursor: pointer;
+        background-repeat: no-repeat;
+        background-position: right 10px center;
+        background-size: 10px 10px;
+    }
+
+    .modal-content textarea{
+        padding: 5px;
+        min-height: 180px;
+        background-color: #ffffff;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        overflow-y: auto;
+        margin-bottom: 20px;
+        resize: none;
+        width: 96%;  /* Faz o textarea ocupar toda a largura disponível da modal */
+    }
+
+    .modal-content input{
+        font-size: Arial;
+        padding: 5px;
+        background-color: #ffffff;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        overflow-y: auto;
+        margin-bottom: 20px;
+        resize: none;
+    }
+
+    .editMmodal textarea{
+        width: 100%;  /* Faz o textarea ocupar toda a largura disponível da modal */
+    }
+
+    .textarea-campo {
+        font-size: Arial;
+        padding: 5px;
+        min-height: 200px;
+        background-color: #ffffff;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        overflow-y: auto;
+        margin-bottom: 20px;
+        resize: none;
+        width: 100%;  /* Faz o textarea ocupar toda a largura disponível da modal */
+    }
+
+    ::placeholder {
+        font-family: 'Arial';
+        font-size: 14px;
+        color: #888; 
+    }
+
+    .close-btn{
+        cursor: pointer;
+    }
+
+    
+/* Estilo do menu de opções para o dropdown (Editar e Excluir) */
+
+    .img-dropdown{
+        display: flex;
+        justify-content: space-between;
+    }    
+
+    .dropdown-content {
+        display: none; /* Inicialmente escondido */
+        background-color: #f1f1f1;
+        min-width: 160px;
+        z-index: 1;
+        border-radius: 5px;
+        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .dropdown-btn {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        font-size: 16px;
+        padding: 10px;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    .dropdown-content button {
+        padding: 10px;
+        border: none;
+        width: 80%;
+        text-align: left;
+        cursor: pointer;
+    }
+
+    .dropdown-content button:hover {
+        background-color: #ddd;
+    }
+
+element.style {
+    width: none;
+    height: none;
+}
